@@ -3,7 +3,7 @@ pipeline{
 	stages{
 		stage('1-action1'){
 			steps{
-				checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins-access', url: 'https://github.com/ArmandTeam8/jenkins2.git']])
+				checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'jenkins-access', url: 'https://github.com/ArmandTeam8/jenkins1.git']])
 			}
 		}
 		stage('2-action2'){
