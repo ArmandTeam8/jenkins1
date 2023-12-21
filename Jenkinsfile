@@ -21,5 +21,28 @@ pipeline{
 				sh 'lscpu'
 			}
 		}
+		stage('5-parallel-job'){
+			parallel{
+				stage{'1-firstparajob'}{
+					steps{
+						sh 'cat /etc/passwd'
+					}
+				}
+				stage{'2-secondparajob'}{
+					steps{
+						sh 'cat /etc/os-release'
+					}
+				}	
+			}
+		}
+		stage('6-endofjobs'){
+			steps{
+				echo "End of pipeline"
+			}
+		}
 	}
-}
+}		
+		
+
+
+	
